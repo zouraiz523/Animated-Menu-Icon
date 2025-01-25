@@ -1,0 +1,44 @@
+<style>
+    .menu-icon {
+        width: 30px;
+        height: 24px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .menu-icon span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #333;
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu-icon.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .menu-icon.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+</style>
+
+<div class="menu-icon" onclick="toggleMenu(this)">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<script>
+    function toggleMenu(element) {
+        element.classList.toggle('active');
+    }
+</script>

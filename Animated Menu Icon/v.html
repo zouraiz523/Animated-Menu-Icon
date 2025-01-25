@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Menu Icon</title>
+   <style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.menu-icon {
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.line {
+    background-color: #333;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.line1 {
+    top: 0;
+}
+
+.line2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.line3 {
+    bottom: 0;
+}
+
+.menu-icon.active .line1 {
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+.menu-icon.active .line2 {
+    opacity: 0;
+}
+
+.menu-icon.active .line3 {
+    transform: rotate(-45deg);
+    bottom: 50%;
+}
+   </style>
+</head>
+<body>
+    <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+
+    <script >
+
+function toggleMenu() {
+    const menuIcon = document.getElementById('menuIcon');
+    menuIcon.classList.toggle('active');
+}
+    </script>
+</body>
+</html>
